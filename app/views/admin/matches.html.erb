@@ -1,0 +1,33 @@
+<table class="table table-striped table-bordered table-hover no-margin-bottom">
+	<thead>
+		<tr>
+			<th>Home Team</th>
+			<th>Away Team</th>
+			<th class="center">Score</th>
+			<th>Date Played</th>
+			<th>Edit</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<%@Matches.each do |match| %>
+		<tr>
+			<td >
+				<%=match.HomeTeam.Name %>
+			</td>
+			<td>
+				<%=match.AwayTeam.Name %>
+			</td>
+			<td class="center">
+				<%=match.Score %>
+			</td>
+			<td>
+				<%=match.DatePlayed.to_formatted_s(:long_ordinal) %>
+			</td>
+			<td>
+				<a href="/admin/editmatch/<%=match.id%>">Edit</a>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

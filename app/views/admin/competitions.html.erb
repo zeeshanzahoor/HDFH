@@ -1,0 +1,26 @@
+<table class="table table-striped table-bordered table-hover no-margin-bottom">
+	<thead>
+		<tr>
+			<th>Competetion Name</th>
+			<th>Teams
+			</th>
+			<th>Matches</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<%@Competitions.each do |comp| %>
+		<tr>
+			<td>
+				<%=comp.Name%>
+			</td>
+			<td>
+				<a href="/admin/teams/<%=comp.CanonicalName%>">Show Teams</a>
+			</td>
+			<td>
+				<a href="/admin/matches/<%=comp.CanonicalName%>">Show Matches</a>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

@@ -1,0 +1,14 @@
+
+
+ <div id="highlights-nodes">
+    <% @Matches.each do |match| %>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <a href="<%=match.HomeTeam.CanonicalName + "-vs-" +match.AwayTeam.CanonicalName+ "-highlights/latest" %>">
+                <div class="node">
+                    <img src="<%="/Images/"+match.CoverPicture%>" wmode="transparent" alt="">
+                    <div class="node-text"><%=match.HomeTeam.Name + " vs " +match.AwayTeam.Name%></div>
+                </div>
+            </a>
+        </div>
+    <% end%>
+</div>

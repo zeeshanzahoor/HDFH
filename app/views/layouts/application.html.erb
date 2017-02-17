@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#841200" />
+    <link rel="icon" sizes="192x192" href="/icon.png">
+    <title>HD Football Highlights</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <ul id="gn-menu" class="gn-menu-main">
+        <li class="gn-trigger">
+            <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+            <nav class="gn-menu-wrapper">
+                <div class="gn-scroller">
+                    <ul class="gn-menu">
+                        <li><a href="/champions-league-highlights" title="champions league highlights" class="gn-icon">Champions league</a></li>
+                        <li><a href="/la-liga-highlights" title="la liga highlights" class="gn-icon">La liga</a></li>
+                        <li><a href="/league-one-highlights" title="league one highlights" class="gn-icon">League One</a></li>
+                        <li><a href="/premier-league-highlights" title="premier league highlights" class="gn-icon">Premier league</a></li>
+                        <li><a href="/serie-a-highlights" title="serie a highlights" class="gn-icon">Serie A</a></li>
+                        <li><a href="/europa-league-highlights" title="europa league highlights" class="gn-icon">Europa League</a></li>
+                        <li><a href="/mls-highlights" title="mls highlights" class="gn-icon">MLS</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </li>
+    </ul>
+    <div class="main-container container-fluid">
+        <div class="page-container" style="margin-top:50px;">
+            <div class="page-content" id="page-content">
+              <%= yield %>
+            </div>
+        </div>
+    </div>
+    <script>
+        new gnMenu(document.getElementById('gn-menu'));
+    </script>
+  </body>
+</html>
