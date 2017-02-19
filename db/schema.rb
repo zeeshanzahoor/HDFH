@@ -12,13 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20170212054525) do
 
-  create_table "competitions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "competitions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string  "Name"
     t.string  "CanonicalName"
     t.integer "Order"
   end
 
-  create_table "matches", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "matches", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.datetime "DatePlayed"
     t.string   "Status"
     t.integer  "HomeTeamId"
@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 20170212054525) do
     t.string   "CoverPicture"
   end
 
-  create_table "teams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "teams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "Name"
     t.string "CanonicalName"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "Name"
     t.string   "UserName"
     t.string   "Password"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20170212054525) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string  "Title"
     t.string  "Url"
     t.integer "Match_Id"

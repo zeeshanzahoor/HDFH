@@ -31,4 +31,21 @@ class AdminController < ApplicationController
   def teams
 
   end
+
+  def editmatch
+    if request.post?
+
+      @match = Match.new  
+      @match.Videos.build
+    else
+      id = params[:id]
+    if id
+      @match = Match.find(id)
+    else
+      @match = Match.new
+    end
+    @match.Videos.build
+    end
+    
+  end
 end
