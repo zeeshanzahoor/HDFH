@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
+  
   layout "admin"
   def index
-
   end
 
   def login
@@ -31,21 +31,23 @@ class AdminController < ApplicationController
   def teams
 
   end
+  
+  
 
   def editmatch
-    if request.post?
-
-      @match = Match.new  
-      @match.Videos.build
+    if params[:id]
+        m = Match.find(params[:id])
+        @match = MatchFormObject.new(m)
     else
-      id = params[:id]
-    if id
-      @match = Match.find(id)
-    else
-      @match = Match.new
-    end
-    @match.Videos.build
+        @match = MatchFormObject.new(nil)
     end
     
+  end
+  def savematch
+    if params[:id]
+      m = Match.find(params[:id])
+      matchobj = MatchFormObject.new(m)
+      matchobj.Update(params[:match])
+    end
   end
 end
