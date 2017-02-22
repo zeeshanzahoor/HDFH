@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  
+
   layout "admin"
   def index
   end
@@ -31,8 +31,8 @@ class AdminController < ApplicationController
   def teams
 
   end
-  
-  
+
+
 
   def editmatch
     if params[:id]
@@ -41,13 +41,19 @@ class AdminController < ApplicationController
     else
         @match = MatchFormObject.new(nil)
     end
-    
+
   end
   def savematch
     if params[:id]
       m = Match.find(params[:id])
       matchobj = MatchFormObject.new(m)
-      matchobj.Update(params[:match])
+      myid =  matchobj.Update(params[:match])
+      redirect_to :action => 'editmatch', :id => myid
+    else
+      matchobj = MatchFormObject.new(nil)
+      myid =  matchobj.Update(params[:match])
+      redirect_to :action => 'editmatch', :id => myid
     end
+
   end
 end
