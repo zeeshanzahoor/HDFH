@@ -15,7 +15,7 @@ class HomeController < ApplicationController
     @team1 = params[:team1]
     @team2 = params[:team2]
     league = Competition.where(:CanonicalName => "la-liga").first()
-    @Matches = league.matches.take(5)
+    @Matches = league.matches.take(8)
     # ActiveSupport::Inflector.transliterate('aäoöuü')
 
   end

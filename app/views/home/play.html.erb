@@ -9,17 +9,25 @@
       vertical-align: top;
     }
     .bg1{
-      background-image: url('/images/b1.jpg');
-      background-position-x: -650px;
-      filter: grayscale(90%);
+      /*filter: grayscale(90%);*/
       display: table-cell;
       float: none;
+      vertical-align: top;
     }
     .bg2{
       /*background-image: url('/images/bg2.jpg');*/
-      filter: grayscale(90%);
+      /*filter: grayscale(90%);*/
       display: table-cell;
       float: none;
+      vertical-align: top;
+    }
+    .bg2 img{
+      height: 100%;
+      position: absolute;
+    }
+    .bg1 img{
+      position: absolute;
+      height: 100%;
     }
     .sharing-btn {
         display: none !important;
@@ -28,6 +36,7 @@
 </style>
 <div class="col-xs-12 player-wrapper">
     <div class="hidden-xs hidden-sm col-md-2 bg1">
+      <img src="/images/bg2.jpg" >
     </div>
     <div class="player col-xs-12 col-sm-12 col-md-8 col-lg-8">
         <script src="//cdn.playwire.com/bolt/js/zeus/embed.js" data-config="//config.playwire.com/21772/videos/v2/5332421/zeus.json" data-width="100%" data-height="100%" type="text/javascript" charset="utf-8"></script>
